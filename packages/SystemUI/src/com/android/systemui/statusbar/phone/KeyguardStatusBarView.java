@@ -29,6 +29,8 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.os.UserHandle;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.util.TypedValue;
