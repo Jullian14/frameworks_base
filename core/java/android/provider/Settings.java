@@ -6142,6 +6142,45 @@ public final class Settings {
         public static final String HIDE_LOCKSCREEN_STATUS_BAR = "hide_lockscreen_status_bar";
 
         /**
+        * Ambient Customization
+        * @hide
+        */
+        public static final String AMBIENT_TEXT = "ambient_text";
+
+        public static final String AMBIENT_TEXT_STRING = "ambient_text_string";
+
+        public static final String AMBIENT_TEXT_ANIMATION = "ambient_text_animation";
+
+        public static final String AMBIENT_TEXT_SIZE = "ambient_text_size";
+
+        public static final String AMBIENT_TEXT_FONT = "ambient_text_font";
+
+        public static final String AMBIENT_TEXT_ALIGNMENT = "ambient_text_alignment";
+
+        /**
+         * Ambient text color
+         * @hide
+         */
+        public static final String AMBIENT_TEXT_COLOR = "ambient_text_color";
+
+        private static final Validator AMBIENT_TEXT_COLOR_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        public static final String AMBIENT_TEXT_TYPE_COLOR = "ambient_text_type_color";
+
+        /** @hide */
+        private static final Validator AMBIENT_TEXT_TYPE_COLOR_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
+        * Ambient Customization
+        * @hide
+        */
+        public static final String AMBIENT_IMAGE = "ambient_image";
+
+        public static final String AMBIENT_CUSTOM_IMAGE = "ambient_custom_image";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -6288,6 +6327,8 @@ public final class Settings {
             QS_DATAUSAGE,
             THEMING_SETTINGS_DASHBOARD_ICONS,
             SHOW_MEDIA_HEADS_UP,
+            AMBIENT_TEXT_COLOR,
+            AMBIENT_TEXT_TYPE_COLOR,
         };
 
         /**
@@ -6502,6 +6543,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(THEMING_SETTINGS_DASHBOARD_ICONS);
             PRIVATE_SETTINGS.add(SHOW_VOLTE_ICON);
 	    PRIVATE_SETTINGS.add(HIDE_LOCKSCREEN_STATUS_BAR);
+            PRIVATE_SETTINGS.add(AMBIENT_TEXT_COLOR);
+            PRIVATE_SETTINGS.add(AMBIENT_TEXT_TYPE_COLOR);
         }
 
         /**
@@ -6688,6 +6731,8 @@ public final class Settings {
             VALIDATORS.put(THEMING_SETTINGS_DASHBOARD_ICONS, THEMING_SETTINGS_DASHBOARD_ICONS_VALIDATOR);
             VALIDATORS.put(SHOW_VOLTE_ICON, SHOW_VOLTE_ICON_VALIDATOR);
             VALIDATORS.put(SHOW_MEDIA_HEADS_UP, SHOW_MEDIA_HEADS_UP_VALIDATOR);
+            VALIDATORS.put(AMBIENT_TEXT_COLOR, AMBIENT_TEXT_COLOR_VALIDATOR);
+            VALIDATORS.put(AMBIENT_TEXT_TYPE_COLOR, AMBIENT_TEXT_TYPE_COLOR_VALIDATOR);
         }
 
         /**
