@@ -64,9 +64,7 @@ public class CaffeineTile extends QSTileImpl<BooleanState> {
 
     @Override
     public BooleanState newTileState() {
-        BooleanState state = new BooleanState();
-        state.handlesLongClick = false;
-        return state;
+        return new BooleanState();
     }
 
     @Override
@@ -178,16 +176,22 @@ public class CaffeineTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
+        if (mWakeLock == null) {
+            return;
+        }
+        if (state.slash == null) {
+            state.slash = new SlashState();
+        }
+        state.label = mContext.getString(R.string.quick_settings_caffeine_label);
+        state.icon = mIcon;
         state.value = mWakeLock.isHeld();
         if (state.value) {
-            state.label = formatValueWithRemainingTime();
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_caffeine_on);
+            state.secondaryLabel = formatValueWithRemainingTime();
             state.contentDescription =  mContext.getString(
                     R.string.accessibility_quick_settings_caffeine_on);
             state.state = Tile.STATE_ACTIVE;
         } else {
-            state.label = mContext.getString(R.string.quick_settings_caffeine_label);
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_caffeine_off);
+            state.secondaryLabel = mContext.getString(R.string.quick_settings_caffeine_label_off);
             state.contentDescription =  mContext.getString(
                     R.string.accessibility_quick_settings_caffeine_off);
             state.state = Tile.STATE_INACTIVE;
@@ -219,3 +223,4 @@ public class CaffeineTile extends QSTileImpl<BooleanState> {
         }
     }
 }
+
