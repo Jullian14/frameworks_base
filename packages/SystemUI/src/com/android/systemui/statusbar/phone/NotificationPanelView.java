@@ -3612,7 +3612,6 @@ public class NotificationPanelView extends PanelView implements
                 Settings.System.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT) != 0;
         boolean ambientLights = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.AMBIENT_NOTIFICATION_LIGHT_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
-        boolean activeNotif = mNotificationStackScroller.hasActiveClearableNotifications(ROWS_HIGH_PRIORITY);
         int pulseReason = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.PULSE_TRIGGER_REASON, DozeLog.PULSE_REASON_NONE, UserHandle.USER_CURRENT);
         boolean pulseReasonNotification = pulseReason == DozeLog.PULSE_REASON_NOTIFICATION;

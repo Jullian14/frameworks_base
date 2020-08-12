@@ -40,6 +40,8 @@ import javax.inject.Inject;
 /** Quick settings tile: Caffeine **/
 public class CaffeineTile extends QSTileImpl<BooleanState> {
 
+    private final Icon mIcon = ResourceIcon.get(R.drawable.ic_qs_caffeine);
+
     private final PowerManager.WakeLock mWakeLock;
     private int mSecondsRemaining;
     private int mDuration;
@@ -122,6 +124,11 @@ public class CaffeineTile extends QSTileImpl<BooleanState> {
     @Override
     public Intent getLongClickIntent() {
         return null;
+    }
+
+    @Override
+    protected void handleLongClick() {
+        handleClick();
     }
 
     @Override

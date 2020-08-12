@@ -34,6 +34,7 @@ import android.os.UserHandle;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.util.TypedValue;
+import android.provider.Settings;
 import android.view.DisplayCutout;
 import android.view.Gravity;
 import android.view.View;
